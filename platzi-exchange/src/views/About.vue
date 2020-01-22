@@ -4,15 +4,15 @@
     <p class="text-gray-600 text-xl text-center">
       Proyecto para obtener las cotizaciones de las cryptomonedas mas
       importantes a traves de la API REST de Coincap.
-      <br />Este proyecto es utilizado en el curo de Vue.js Basico de Platzi <br />
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum sed debitis ut natus 
-        accusamus amet obcaecati quaerat culpa provident quia! Ex, vel consectetur tempore 
-        aliquid quaerat eaque id mollitia magnam!
+      <br />Este proyecto es utilizado en el curo de Vue.js Basico de Platzi
+      <br />
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum sed
+      debitis ut natus accusamus amet obcaecati quaerat culpa provident quia!
+      Ex, vel consectetur tempore aliquid quaerat eaque id mollitia magnam!
     </p>
 
-    <router-link
-      to="/"
-      class="mt-5 text-xl text-green-600 hover:underline"
-    >Volver a la pagina de Inicio</router-link>
+    <router-link to="/" class="mt-5 text-xl text-green-600 hover:underline"
+      >Volver a la pagina de Inicio</router-link
+    >
   </div>
 </template>
