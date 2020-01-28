@@ -1,38 +1,25 @@
 <template>
   <div>
-
-    <PxAssetsTable :assets='assets'> </PxAssetsTable>
+    <PxAssetsTable :assets="assets"> </PxAssetsTable>
   </div>
 </template>
 
 <script>
-import api from '@/api'
+import api from "@/api";
 import PxAssetsTable from "@/components/PxAssetsTable";
 
 export default {
   name: "Home",
   components: { PxAssetsTable },
 
- data(){
+  data() {
+    return {
+      assets: []
+    };
+  },
 
-   return{
-     assets:[]
-   }
-
- },
-
-  created (){
-
-    api.getAssets()
-        .then( assets => (this.assets= assets))
-
+  created() {
+    api.getAssets().then(assets => (this.assets = assets));
   }
-
-
-
-
-
-
-
 };
 </script>

@@ -7,15 +7,11 @@
 </template>
 
 <script>
-
 import PxHeader from "@/components/PxHeader";
 
 export default {
   name: "app",
-  components: { PxHeader },
-
-
-
+  components: { PxHeader }
 };
 </script>
 

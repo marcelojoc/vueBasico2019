@@ -48,7 +48,9 @@
         <div class="my-10 sm:mt-0 flex flex-col justify-center text-center">
           <button
             class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-          >Cambiar</button>
+          >
+            Cambiar
+          </button>
 
           <div class="flex flex-row my-5">
             <label class="w-full" for="convertValue">
@@ -68,55 +70,55 @@
 </template>
 
 <script>
-import api from '@/api'
+import api from "@/api";
 
 export default {
-  name: 'CoinDetail',
+  name: "CoinDetail",
 
   data() {
     return {
       asset: {},
       history: []
-    }
+    };
   },
 
   computed: {
     min() {
       return Math.min(
         ...this.history.map(h => parseFloat(h.priceUsd).toFixed(2))
-      )
+      );
     },
 
     max() {
       return Math.max(
         ...this.history.map(h => parseFloat(h.priceUsd).toFixed(2))
-      )
+      );
     },
 
     avg() {
       return Math.abs(
         ...this.history.map(h => parseFloat(h.priceUsd).toFixed(2))
-      )
+      );
     }
   },
 
   created() {
-    this.getCoin()
+    this.getCoin();
   },
 
   methods: {
     getCoin() {
-      const id = this.$route.params.id
+      const id = this.$route.params.id;
 
       Promise.all([api.getAsset(id), api.getAssetHistory(id)]).then(
         ([asset, history]) => {
-          this.asset = asset
-          this.history = history
+          this.asset = asset;
+          this.history = history;
         }
-      )
+      );
     }
   }
-}
+};
 </script>
 
 <style scoped>

@@ -14,35 +14,69 @@
       </tr>
     </thead>
     <tbody>
-      <tr  v-for="a in assets"  :key="a.id"   class="border-b border-gray-200 hover:bg-gray-100 hover:bg-orange-100">
-        <td> 
-          <img class="h-8 w-8"
-            :src="`https://static.coincap.io/assets/icons/${a.symbol.toLowerCase()}@2x.png`"
+      <tr
+        v-for="a in assets"
+        :key="a.id"
+        class="border-b border-gray-200 hover:bg-gray-100 hover:bg-orange-100"
+      >
+        <td>
+          <img
+            class="h-8 w-8"
+            :src="
+              `https://static.coincap.io/assets/icons/${a.symbol.toLowerCase()}@2x.png`
+            "
             :alt="a.name"
           />
         </td>
-        <td><b>#{{a.rank}}</b></td>
-        <td>{{a.id}}</td>
-        <td>{{a.symbol}}</td>
-        <td>{{a.priceUsd | dollar}}</td>
-        <td :class="a.changePercent24Hr > 0 ? 'text-green-600' : 'text-pink-600'">
-	        {{ a.changePercent24Hr | porcentaje }}
+        <td>
+          <b>#{{ a.rank }}</b>
         </td>
-        <td class="hidden sm:block"></td>
+        <td>
+          <router-link
+            class="hover: underline text-green-600"
+            :to="{ name: 'coin-detail', params: { id: a.id } }"
+          >
+            {{ a.name }}
+          </router-link>
+          <small class="ml-1 text-gray-500"> {{ a.symbol }} </small>
+        </td>
+        <td>{{ a.symbol }}</td>
+        <td>{{ a.priceUsd | dollar }}</td>
+        <td
+          :class="a.changePercent24Hr > 0 ? 'text-green-600' : 'text-pink-600'"
+        >
+          {{ a.changePercent24Hr | porcentaje }}
+        </td>
+        <td class="hidden sm:block">
+
+          <PxButton  @custom-click="goToCoin(a.id)"  > <span> Detalles </span>
+          </PxButton>
+        </td>
       </tr>
     </tbody>
   </table>
 </template>
 
 <script>
+
+import PxButton from "@/components/PxButton"
 export default {
   name: "PxAssetsTable",
 
+  components:{PxButton},
   props: {
     assets: {
       type: Array,
       default: () => []
     }
+  },
+  methods:{
+
+    goToCoin(id){
+
+      this.$router.push({ name: 'coin-detail', params: { id:id } })      // accede  a la insancia  del  router  para navegar
+    }
+
   }
 };
 </script>
