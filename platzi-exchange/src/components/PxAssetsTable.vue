@@ -48,8 +48,8 @@
           {{ a.changePercent24Hr | porcentaje }}
         </td>
         <td class="hidden sm:block">
-
-          <PxButton  @custom-click="goToCoin(a.id)"  > <span> Detalles </span>
+          <PxButton @custom-click="goToCoin(a.id)">
+            <span> Detalles </span>
           </PxButton>
         </td>
       </tr>
@@ -58,25 +58,21 @@
 </template>
 
 <script>
-
-import PxButton from "@/components/PxButton"
+import PxButton from "@/components/PxButton";
 export default {
   name: "PxAssetsTable",
 
-  components:{PxButton},
+  components: { PxButton },
   props: {
     assets: {
       type: Array,
       default: () => []
     }
   },
-  methods:{
-
-    goToCoin(id){
-
-      this.$router.push({ name: 'coin-detail', params: { id:id } })      // accede  a la insancia  del  router  para navegar
+  methods: {
+    goToCoin(id) {
+      this.$router.push({ name: "coin-detail", params: { id: id } }); // accede  a la insancia  del  router  para navegar
     }
-
   }
 };
 </script>

@@ -18,7 +18,8 @@
             <router-link
               class="mt-5 m-3 text-xl text-gray-600 hover:underline"
               to="/about"
-              >   about
+            >
+              about
             </router-link>
           </div>
         </div>
