@@ -8,19 +8,30 @@
           class="font-semibold text-xl tracking-tight"
           :to="{ name: 'home' }"
         >
-          PlatziExchange
+          Marce-Exchange
         </router-link>
 
         <div
           class="hidden sm:block w-full block flex-grow lg:flex lg:items-center lg:w-auto"
         >
           <div class="text-sm lg:flex-grow">
+
+
             <router-link
               class="mt-5 m-3 text-xl text-gray-600 hover:underline"
               to="/about"
             >
               about
             </router-link>
+
+            <router-link v-for="l in links" :key=l.title
+              class="mt-5 m-3 text-xl text-gray-600 hover:underline"
+              :to="l.to"
+            >
+            {{l.title}}
+            </router-link>
+
+
           </div>
         </div>
       </nav>
@@ -34,6 +45,17 @@ import PxIcon from "@/components/PxIcon";
 export default {
   name: "PxHeader",
 
-  components: { PxIcon }
+  components: { PxIcon },
+
+  props:{
+
+    links:{
+
+      type:Array,
+      default: ()=>[]
+    }
+
+
+  }
 };
 </script>

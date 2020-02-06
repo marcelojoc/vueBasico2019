@@ -66,7 +66,7 @@
             </label>
           </div>
 
-          <span class="text-xl">Prueba</span>
+          
         </div>
       </div>
 
@@ -118,11 +118,27 @@ export default {
       isLoading: false,
       asset: {},
       history: [],
-      markets: []
+      markets: [],
+      fromUSD:false,
+      convertValue= null
     };
   },
 
+  watch:{   // ESCUCHO  EL CAMBIO DE la url  para  disparar  el metodo  getCOinn
+
+    $route (){
+      this.getCoin();
+
+    }
+
+  },
+
   computed: {
+
+    convertResult(){
+
+
+    },
     min() {
       return Math.min(
         ...this.history.map(h => parseFloat(h.priceUsd).toFixed(2))
