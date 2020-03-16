@@ -1,0 +1,15 @@
+{
+  "name": "platzi-asincronismo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "promise": "node src/promises/index.js",
+    "promise:challenge": "node src/promises/challenge.js"
+  },
+  "author": "marcelo contreras",
+  "license": "MIT",
+  "dependencies": {
+    "xmlhttprequest": "^1.8.0"
+  }
+}
