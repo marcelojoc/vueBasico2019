@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "promise": "node src/promises/index.js",
-    "promise:challenge": "node src/promises/challenge.js"
+    "promise:challenge": "node src/promises/challenge.js",
+    "async": "node src/async/index.js",
+    "async:challenge": "node src/async/challenge.js"
   },
   "author": "marcelo contreras",
   "license": "MIT",
